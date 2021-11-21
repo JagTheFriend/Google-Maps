@@ -1,4 +1,4 @@
-mapboxgl.accessToken = "";
+mapboxgl.accessToken = ""
 
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
     enableHighAccuracy: true,
@@ -20,11 +20,16 @@ function setupMap(center) {
         center: center,
         zoom: 17,
     });
+
+    // Add navigation
     const nav = new mapboxgl.NavigationControl();
     map.addControl(nav);
 
+    // Add direction
     var directions = new MapboxDirections({
         accessToken: mapboxgl.accessToken,
+        unit: "metric",
+        profile: "mapbox/driving",
     });
 
     map.addControl(directions, "top-left");
