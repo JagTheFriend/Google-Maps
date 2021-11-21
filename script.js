@@ -1,4 +1,4 @@
-mapboxgl.accessToken = ""
+mapboxgl.accessToken = "";
 
 navigator.geolocation.getCurrentPosition(successLocation, errorLocation, {
     enableHighAccuracy: true,
